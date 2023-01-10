@@ -18,6 +18,8 @@ const todoList=[
   
 ]
 function App() {
+
+  // View part
   return (
     <div>
       <h1>Todo List</h1>
@@ -28,8 +30,7 @@ function App() {
           <li key={todo.id}>{todo.title}</li>
         )
       })}
-      </ul>
-       
+      </ul>       
     </div>
   );
 }
