@@ -5,7 +5,8 @@ let handleAddTodo=(e)=>{
     let todoTitle=e.target.title.value;
     console.log(todoTitle);
     props.onAddTodo(todoTitle);
-    e.target.title.value="";
+    //e.target.title.value="";
+    e.target.reset();
 }
  return (
     <form onSubmit={handleAddTodo}>
