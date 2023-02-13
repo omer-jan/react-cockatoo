@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-let AddTodoForm=(props)=>{
+const AddTodoForm=({onAddTodo})=>{
 
 // State
-const [todoTitle, setTodoTitle] = useState();
-
-// Destructing props
-const{onAddTodo}=props;
+const [todoTitle, setTodoTitle] = useState(); 
 
 let handleTitleChange=(e)=>{
      

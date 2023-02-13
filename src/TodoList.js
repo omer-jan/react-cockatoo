@@ -1,9 +1,6 @@
 import React from "react"
 import TodoListItem from "./TodoListItem";
-let TodoList=(props)=>{ 
-
-  // Destructing  props
-  const {todoList}=props;
+const TodoList=({todoList})=>{  
     return (
         <div>         
           <ul>
