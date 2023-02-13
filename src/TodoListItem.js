@@ -1,3 +1,10 @@
 import React from 'react'
-let TodoListItem=(props)=><li key={props.toDo.id}>{props.toDo.title}</li>  
+let TodoListItem=(props)=>{
+
+    // Destructing props.toDo
+    const{id,title}=props.toDo;
+    
+    return <li key={id}>{title}</li> 
+}
+ 
 export default TodoListItem;
