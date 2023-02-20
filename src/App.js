@@ -17,7 +17,8 @@ const useSemiPersistentState =()=>{
 function App() { 
   const[todoList,setTodoList]=useSemiPersistentState()
   let addTodo =(newTodo)=>{ 
-    setTodoList([...todoList,newTodo])        
+    
+     setTodoList( (previousTodoList) => [...previousTodoList, newTodo])
   }  
   return (
     <>
