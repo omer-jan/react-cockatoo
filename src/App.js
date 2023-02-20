@@ -4,6 +4,8 @@ import TodoList from "./TodoList";
 const useSemiPersistentState =()=>{
   // initialTodoList will get the stored list from localStorage if list dose not exist then it will be initialized with empty array 
   const initialTodoList=JSON.parse(localStorage.getItem('savedTodoList'))==null?[]:JSON.parse(localStorage.getItem('savedTodoList'));
+  
+  const initialTodoList =  JSON.parse(localStorage.getItem('savedTodoList')) || []
   // State variable
   const [todoList, setTodoList] = useState(initialTodoList)
   // useEffect hook to store data in local storage 
