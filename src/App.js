@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
 const useSemiPersistentState =()=>{
-  // initialTodoList will get the stored list from localStorage if list dose not exist then it will be initialized with empty array   
+  // initialTodoList will get the stored list from localStorage if list dose not exist then it will be initialized with empty array 
+  
   const initialTodoList =  JSON.parse(localStorage.getItem('savedTodoList')) || []
   // State variable
   const [todoList, setTodoList] = useState(initialTodoList)
@@ -14,16 +15,16 @@ const useSemiPersistentState =()=>{
 }
 function App() { 
   const[todoList,setTodoList]=useSemiPersistentState()
-  let addTodo =(newTodo)=>{ 
-    
+  const addTodo =(newTodo)=>{    
      setTodoList( (previousTodoList) => [...previousTodoList, newTodo])
-  }  
+  }
+  const removeTodo=(id)=>setTodoList((currentList) =>currentList.filter((todo)=>todo.id !==id))
   return (
     <>
      <h1>Todo List</h1>
      <hr/>  
-     <AddTodoForm onAddTodo={addTodo}/>     
-     <TodoList todoList={todoList} />
+     <AddTodoForm onAddTodo={addTodo}/>   
+     <TodoList onRemoveTodo={removeTodo} todoList={todoList} />
   </>
   )  
 }

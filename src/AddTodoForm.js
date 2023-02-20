@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
+import InputWithLabel from './InputWithLabel';
 const AddTodoForm=({onAddTodo})=>{
 
 // State
 const [todoTitle, setTodoTitle] = useState(); 
 
-let handleTitleChange=(e)=>{
+const handleTitleChange=(e)=>{
      
-     let newTodoTitle=e.target.value;  
+    const newTodoTitle=e.target.value;   
      setTodoTitle(newTodoTitle);
      console.log(todoTitle);
 }
 
-let handleAddTodo=(e)=>{
+const handleAddTodo=(e)=>{
     e.preventDefault();
-    let todoObj={
+    const todoObj={
         id:Date.now(),
         title:todoTitle
     };
@@ -23,8 +24,14 @@ let handleAddTodo=(e)=>{
 
  return (
     <form onSubmit={handleAddTodo}>
-        <label htmlFor="todoTitle" >Title</label>
-        <input value={todoTitle} onChange={handleTitleChange} id="todoTitle" name="title" />
+        <InputWithLabel
+            id="search" 
+            name="Search"
+            placeholder="Search here ... "
+            inputValue={todoTitle}
+            onInputChange={handleTitleChange}
+        >Title</InputWithLabel>
+         
         <button type="submit">Add</button>
     </form>
  )
