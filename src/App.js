@@ -1,20 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
-const useSemiPersistentState =()=>{
-  // initialTodoList will get the stored list from localStorage if list dose not exist then it will be initialized with empty array 
-  
-  const initialTodoList =  JSON.parse(localStorage.getItem('savedTodoList')) || []
-  // State variable
-  const [todoList, setTodoList] = useState(initialTodoList)
-  // useEffect hook to store data in local storage 
-  useEffect(() => { 
-   localStorage.setItem('savedTodoList',JSON.stringify(todoList));
-  },[todoList]);
-  return [todoList,setTodoList];
-}
 function App() { 
-  const[todoList,setTodoList]=useSemiPersistentState()
+    const initialTodoList =  JSON.parse(localStorage.getItem('savedTodoList')) || []
+    const [todoList, setTodoList] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(()=>{
+      new Promise((resolve,reject)=>
+                    {
+                        setTimeout(() =>
+                        {
+                            resolve({ data: { todoList: initialTodoList } });
+                        }, 2000)
+                    }
+                  ).then((result)=>{
+                    setTodoList(result.data.todoList);
+                    setIsLoading(false);
+
+                  });
+    },[]) 
+  useEffect(() => { 
+    if(!isLoading)
+    {
+      
+    }
+    localStorage.setItem('savedTodoList',JSON.stringify(todoList));
+        
+  },[todoList]); 
   const addTodo =(newTodo)=>{    
      setTodoList( (previousTodoList) => [...previousTodoList, newTodo])
   }
@@ -23,8 +35,13 @@ function App() {
     <>
      <h1>Todo List</h1>
      <hr/>  
-     <AddTodoForm onAddTodo={addTodo}/>   
-     <TodoList onRemoveTodo={removeTodo} todoList={todoList} />
+     <AddTodoForm onAddTodo={addTodo}/>  
+      { 
+          isLoading ? 
+          <p>Loading...</p>
+          :  
+          <TodoList onRemoveTodo={removeTodo} todoList={todoList} />
+      }
   </>
   )  
 }
