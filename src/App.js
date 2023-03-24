@@ -1,23 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
+//require('dotenv').config({ path: '.env.local' });
 function App() { 
-    const initialTodoList =  JSON.parse(localStorage.getItem('savedTodoList')) || []
+    const API_KEY="keyekdSu5UIFCvRi7"
+    const BASE_ID="appYHZzF0wZRM22FY"
+    //const initialTodoList =  JSON.parse(localStorage.getItem('savedTodoList')) || []
     const [todoList, setTodoList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(()=>{
-      new Promise((resolve,reject)=>
-                    {
-                        setTimeout(() =>
-                        {
-                            resolve({ data: { todoList: initialTodoList } });
-                        }, 2000)
-                    }
-                  ).then((result)=>{
-                    setTodoList(result.data.todoList);
-                    setIsLoading(false);
+ 
+      fetch(`https://api.airtable.com/v0/${BASE_ID}/Default`,{
+        headers:{
+          'Authorization': `Bearer ${API_KEY}`
+        }
+      })
+      .then((response) => response.json())
+      .then((dataFromAPI) => {
+        const todos = dataFromAPI.records.map((todo) => { 
+          const newTodo =  {
+              id: todo.id,
+              title: todo.fields.Title
+          }
+          return newTodo
+    
+      }); 
+      setTodoList(todos);
+      setIsLoading(false);
+    })
 
-                  });
+
     },[]) 
   useEffect(() => { 
     if(!isLoading)
