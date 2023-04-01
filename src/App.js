@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
 //require('dotenv').config({ path: '.env.local' });
-function App() { 
-    const API_KEY="keyekdSu5UIFCvRi7"
-    const BASE_ID="appYHZzF0wZRM22FY"
-    //const initialTodoList =  JSON.parse(localStorage.getItem('savedTodoList')) || []
+function App() {  
+    const API_KEY=process.env.REACT_APP_API_KEY;
+    const BASE_ID=process.env.REACT_APP_BASE_ID;  
     const [todoList, setTodoList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(()=>{
