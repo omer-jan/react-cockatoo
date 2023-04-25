@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'; 
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
+import Header from "./Header";
+import styles from './cssModule/TodoList.module.css'; 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 function App() {  
     const API_KEY=process.env.REACT_APP_API_KEY;
@@ -46,17 +48,20 @@ function App() {
     <BrowserRouter>
   <Routes>
       <Route path="/" element={
-        <>
-          <h1>Todo List</h1>
-          <hr />  
+        <div className={styles.wrapper}>       
+          <div className={styles.container}>
+          <Header/> 
           <AddTodoForm onAddTodo={addTodo}/>  
           { 
               isLoading ? 
-              <p>Loading...</p>
-              :  
-              <TodoList onRemoveTodo={removeTodo} todoList={todoList} />
+              <p className={styles.title}>Loading...</p>
+              : 
+              <div className={styles.todoItemContainer}>                          
+                <TodoList onRemoveTodo={removeTodo} todoList={todoList} />
+              </div>
           }
-        </>
+        </div>
+        </div>
       }/>
       <Route path="/new" element={ <h1>New Todo List</h1>}></Route>
   </Routes>

@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import InputWithLabel from './InputWithLabel';
+import buttonStyle from './cssModule/button.module.css'; 
+
 const AddTodoForm=({onAddTodo})=>{
 
 // State
-const [todoTitle, setTodoTitle] = useState(); 
+const [todoTitle, setTodoTitle] = useState();
 
 const handleTitleChange=(e)=>{
-     
-    const newTodoTitle=e.target.value;   
+
+    const newTodoTitle=e.target.value;
      setTodoTitle(newTodoTitle);
      console.log(todoTitle);
 }
@@ -25,14 +27,13 @@ const handleAddTodo=(e)=>{
  return (
     <form onSubmit={handleAddTodo}>
         <InputWithLabel
-            id="search" 
-            name="Search"
-            placeholder="Search here ... "
+            id="search"
+            name="Search"            
+            placeholder="Enter a new todo "
             inputValue={todoTitle}
             onInputChange={handleTitleChange}
-        >Title</InputWithLabel>
-         
-        <button type="submit">Add</button>
+        >Title</InputWithLabel> 
+        <button className={buttonStyle.button} type="submit">Add</button>
     </form>
  )
 }
