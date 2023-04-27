@@ -1,4 +1,7 @@
 import React,{useRef,useEffect} from "react" 
+
+import styles from './cssModule/TodoList.module.css'; 
+
 const InputWithLabel=(
     {
         children,
@@ -13,10 +16,11 @@ const InputWithLabel=(
     })
     return (
         <>         
-            <label htmlFor="todoTitle" >{children}</label>
+            <label htmlFor="todoTitle" className={styles.lable} >{children}</label>
             <input value={inputValue} 
                    onChange={onInputChange}
                    id={id}
+                   className={styles.formControl}
                    ref={inputRef}
                    placeholder={placeholder}
                    name="{name}"
