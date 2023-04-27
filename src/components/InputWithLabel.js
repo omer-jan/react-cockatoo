@@ -15,7 +15,7 @@ const InputWithLabel=(
     })
     return (
         <>         
-            <label htmlFor="todoTitle" className={styles.lable} >{children}</label>
+            <label htmlFor="todoTitle" className={`${styles.lable} ${styles.textWhite}`}>{children}</label>
             <input value={inputValue} 
                    onChange={onInputChange}
                    id={id}
