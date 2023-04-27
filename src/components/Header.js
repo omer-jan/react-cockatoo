@@ -1,5 +1,5 @@
-import HeaderItem from './HeaderItem';
-import style from './cssModule/TodoList.module.css'
+import HeaderItem from './HeaderItem'; 
+import style from './TodoList.module.css';
 const Header=()=>{   
     return (
         <div className={style.container}>   

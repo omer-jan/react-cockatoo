@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'; 
-import AddTodoForm from "./AddTodoForm";
-import TodoList from "./TodoList";
-import Header from "./Header";
-import styles from './cssModule/TodoList.module.css'; 
+import AddTodoForm from "./components/AddTodoForm";
+import TodoList from "./components/TodoList";
+import Header from "./components/Header";
+import styles from './components/TodoList.module.css'; 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 function App() {  
     const API_KEY=process.env.REACT_APP_API_KEY;

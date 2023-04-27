@@ -1,4 +1,5 @@
-import style from './cssModule/TodoList.module.css'
+import style from './TodoList.module.css'
+import PropTypes from 'prop-types';
 const HeaderItem=({title,count})=>{   
     return (
         <div className={style.col}>
@@ -11,4 +12,8 @@ const HeaderItem=({title,count})=>{
       </div>
       );
 }
+HeaderItem.propTypes = {
+  title: PropTypes.string,  
+  count: PropTypes.number  
+};
 export default HeaderItem
