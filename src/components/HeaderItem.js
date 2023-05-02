@@ -5,8 +5,8 @@ const HeaderItem=({title,count})=>{
         <div className={style.col}>
         <div className={style.box}>
         <div className={style.boxContent}>
-          <span className={style.boxText}>{title}</span>
-          <span className={style.boxNumber}>{count} Tasks</span>
+          <span className={`${style.boxText} ${style.textWhite}`}>{title}</span>
+          <span className={`${style.boxNumber} ${style.textHalfWhite}`}>{count} Tasks</span>
         </div> 
       </div>
       </div>
@@ -17,3 +17,4 @@ HeaderItem.propTypes = {
   count: PropTypes.number  
 };
 export default HeaderItem
+ 

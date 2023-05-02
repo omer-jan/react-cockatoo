@@ -6,23 +6,29 @@ import PropTypes from 'prop-types';
 const AddTodoForm=({onAddTodo})=>{
 
 // State
-const [todoTitle, setTodoTitle] = useState();
+const [todoTitle, setTodoTitle] = useState("");
 
 const handleTitleChange=(e)=>{
-
-    const newTodoTitle=e.target.value;
-     setTodoTitle(newTodoTitle);
-     console.log(todoTitle);
+    const newTodoTitle=e.target.value; 
+    setTodoTitle(newTodoTitle); 
 }
 
 const handleAddTodo=(e)=>{
     e.preventDefault();
-    const todoObj={
-        id:Date.now(),
-        title:todoTitle
-    };
-    onAddTodo(todoObj);
-    setTodoTitle("");
+    if(todoTitle=="")
+    {
+        alert("Please enter a todo task");
+    }
+    else 
+    {
+        const todoObj={
+            id:Date.now(),
+            title:todoTitle
+        };
+        onAddTodo(todoObj);
+        setTodoTitle("");
+    }
+ 
 }
 
  return (
