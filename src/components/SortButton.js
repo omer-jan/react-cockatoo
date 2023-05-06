@@ -1,7 +1,7 @@
 import buttonStyle from './button.module.css'; 
 const SortButton=({ onClick, isActive })=>{     
-      const ascendingArrow  ="z to a";
-      const descendingArrow ="a to z";
+      const ascendingArrow  ="a to z";
+      const descendingArrow ="z to a";
  
       return (
         <button

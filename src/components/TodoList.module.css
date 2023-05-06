@@ -3,15 +3,12 @@
 body {  
     color: #333;
     background-color:#344fa1;
-    font-family: 'Dongle', sans-serif;    
-  }  
-  .wrapper
-  {
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;    
-    margin-top:2rem;
+    font-family: 'Dongle', sans-serif; 
+    min-width: 300px; 
+    margin: 0px !important;
+    padding: 0px !important;  
   } 
+  
   .container {
   width: 100%;
   padding-right: 7.5px;
@@ -22,11 +19,7 @@ body {
 .appTitle {
   display: block;
   font-size: 4em;     
-  font-weight: bolder;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  font-weight: bolder; 
 }
 .row { 
     display: flex;
@@ -85,23 +78,8 @@ body {
   cursor: pointer;
   
 }
-.formControl {
-  display: block;
-  width: 100%;
-  height: calc(2.25rem + 2px);
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
-  margin-bottom: 1rem;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 1.0rem;
-  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
+
+ 
 .lable
 {
   font-weight: 900; 
@@ -113,7 +91,7 @@ body {
   font-size: 2rem; 
 } 
 .todoItemContainer {
-  width: 60%;
+  width: 70%; 
 }
 
 
@@ -127,8 +105,7 @@ body {
   justify-content: space-between;
   margin-bottom: .5rem; 
   padding: 1rem;
-  position: relative;
-  width: 100%;
+  position: relative; 
   max-width: 100%; 
 }
 .title{
@@ -136,15 +113,19 @@ body {
   font-size: x-large;  
   display: block;  
   margin-top: .2rem;  
+  color:#eeeeee;
 }
 .textHalfWhite
 {
-  color:#9ba7cb;
-  /* color:#ededed; */
+  color:#9ba7cb; 
 }
 .textWhite
 {
   color:#ffffff;
+}
+.textSmokWhite
+{
+  color:#dbdbdb;
 }
 .pText{
   font-weight: 900;
@@ -152,26 +133,67 @@ body {
   display: block;  
   margin-top: .2rem;  
 }
- /* Media query for mobile devices */
-@media (max-width: 767px) {
-  .todoItemContainer {
-    width: 100%;  
-  }
-  .todoItemBox {
-    min-width: 400px; 
-  }
+ 
+.formControl {   
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  margin-bottom: 1rem;
+  
+  background-clip: padding-box;
+  border: 3px solid #ced4da;
+  border-radius: 1.0rem;
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  
+}
+.formGroup
+{ 
+  width: 100%;
+  margin: 0 auto;  
+}
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box; /* make sure the padding and border are included in the width */
+  padding: 10px;
+  border: none;
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
-/* Media query for tablet devices */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .todoItemContainer {
-    width: 80%;  
-  }
+.wrapper {
+  width: 80%; 
+  padding: 10px;
+  margin: 0px; 
+  margin: 0 auto;
+  
 }
 
-/* Media query for desktop devices */
-@media (min-width: 1024px) {
+
+@media only screen and (max-width: 1024px) {
+  /* For smaller laptops and tablets */
+  .wrapper {
+    width: 90%;
+  } 
   .todoItemContainer {
-    width: 60%;  
+    width: 100%; 
   }
+
+  
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile devices */
+  .wrapper {
+    width: 95%;
+  } 
+  .todoItemContainer {
+    width: 100%; 
+  }
+  
 }
