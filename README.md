@@ -5,7 +5,7 @@
 
 Using the application user can add a new todos, delete existing ones, and sort todos in ascending and descending order. The application is designed to be user-friendly and easy to navigate.
 Here is  a screenshot of the application in action:
-![screenshot](./public/screenshot.png)
+![screenshot](./public/ScreenShot.PNG)
 As you can see, the interface is simple and intuitive, with clear buttons and labels for adding, deleting, and sorting todos. With this application, users can easily keep track of their daily tasks and stay organized.
 
 **[Click here](https://github.com/Code-the-Dream-School/react/wiki) to redirect to the Wiki for this repository.
