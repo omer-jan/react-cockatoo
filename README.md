@@ -10,7 +10,7 @@ As you can see, the interface is simple and intuitive, with clear buttons and la
 
 **[Click here](https://github.com/Code-the-Dream-School/react/wiki) to redirect to the Wiki for this repository.
 
-###Dependencies
+### Dependencies
 To create this todo application, several dependencies were used, including **create-react-app**, **react-router**, **Prop-Types**, **useEffect**, and **useMemo**.
 
 - create-react-app is a command-line utility that sets up a React project with a modern build infrastructure. It provides a boilerplate configuration to start building the application and simplifies the development process by providing a live development server, optimized production build, and other useful features.
