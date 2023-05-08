@@ -1,13 +1,14 @@
 # Todo App with React
 
-### Final project for Front-end React course 
+### Final project for React Front End Class 
 
-### During class you will be building **TWO** React apps...
+To visit the course outline [click here] (https://learn.codethedream.org/cockatoo-react/)
+[React Front End Course outline] (https://learn.codethedream.org/cockatoo-react/)
 
-The **FIRST** will be a **BLOG APP** that you build while working through the class textbook.
-The blog app you will create completely from scratch following the book instructions.  _You should keep your work for the blog app in a separate repository._  
-
-The **SECOND** will be a **TO-DO LIST APP** that you will build as extra coding practice during your coding assignments throughout the class.  
+Users can add a new todos, delete existing ones, and sort todos in ascending and descending order. The application is designed to be user-friendly and easy to navigate.
+Here is  a screenshot of the application in action:
+[insert screenshot here]
+As you can see, the interface is simple and intuitive, with clear buttons and labels for adding, deleting, and sorting todos. With this application, users can easily keep track of their daily tasks and stay organized.
 
 **[Click here](https://github.com/Code-the-Dream-School/react/wiki) to redirect to the Wiki for this repository.  
 Read the Project Setup section and then follow the link to the General Instructions to get started.**
