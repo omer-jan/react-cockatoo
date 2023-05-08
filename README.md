@@ -1,4 +1,4 @@
-# Welcome to Code the Dream's React Class!  
+#React Based Todo Application!  
 
 ### During class you will be building **TWO** React apps...
 
