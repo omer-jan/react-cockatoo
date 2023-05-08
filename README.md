@@ -1,4 +1,6 @@
-# React Based Todo Application!  
+# Todo App with React
+
+### Final project for Front-end React course 
 
 ### During class you will be building **TWO** React apps...
 
