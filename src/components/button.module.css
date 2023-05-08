@@ -10,13 +10,14 @@
     line-height: 1.5;
     
     color: #fff;
-    background-color: #6e06ff;
-    border-color: #6310d8; 
+    background-color: #6e06ff; 
     border-radius: 0.9rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
   .button:hover {
     color: #e7e7e8;
+    background-color: #4e02b8;
+    border-color: none; 
     text-decoration: none;
     cursor: pointer;
   } 

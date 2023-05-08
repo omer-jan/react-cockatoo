@@ -1,39 +1,34 @@
 import React,{useRef,useEffect} from "react"  
 import styles from './TodoList.module.css'
 import PropTypes from 'prop-types'; 
-const InputWithLabel=(
-    {
-        children,
-        id,
-        name,
-        placeholder,
-        inputValue,
-        onInputChange})=>{  
+const InputWithLabel=({ todoTitle, handleTitleChange, children,name,placeholder })=>{  
     const inputRef=useRef(); 
     useEffect(()=>{
         inputRef.current.focus();
-    })
-    return (
-        <>         
-            <label htmlFor="todoTitle" className={`${styles.lable} ${styles.textWhite}`}>{children}</label>
-            <input value={inputValue} 
-                   onChange={onInputChange}
-                   id={id}
+    }, [])
+    return (     
+      <div className={styles.formGroup}>
+         <label htmlFor={name} className={`${styles.lable} ${styles.textWhite}`}>{children}</label>
+         <input value={todoTitle} 
+                   onChange={handleTitleChange} 
+                   type="text"
                    className={styles.formControl}
                    ref={inputRef}
                    placeholder={placeholder}
-                   name="{name}"
+                   name={name}
+                   id={name}
                    
                 />
-        </>
-      );
+    </div>
+    
+    );
+  
 }
 InputWithLabel.propTypes = {
-    children: PropTypes.node,  
-    id: PropTypes.string,  
+    children: PropTypes.node,   
     name: PropTypes.string,  
     placeholder: PropTypes.string,  
-    inputValue: PropTypes.string,  
-    onInputChange: PropTypes.func  
+    todoTitle: PropTypes.string,  
+    handleTitleChange: PropTypes.func  
   };
-export default InputWithLabel
+export default InputWithLabel 
