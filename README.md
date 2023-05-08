@@ -2,6 +2,7 @@
 
 ### Final project for React Front End Class 
 
+**[Click here](https://github.com/Code-the-Dream-School/react/wiki) to redirect to the Wiki for this repository.
 To visit the course outline [click here] (https://learn.codethedream.org/cockatoo-react/)
 [React Front End Course outline] (https://learn.codethedream.org/cockatoo-react/)
 
